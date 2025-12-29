@@ -57,14 +57,14 @@ export default function Page() {
     { label: "Therapy Sessions Delivered", value: "156,555+", color: "from-orange-100 to-amber-50" },
     { label: "Children Supported", value: "1000+", color: "from-blue-100 to-indigo-50" },
     { label: "Parent Trust", value: "98%", color: "from-rose-100 to-pink-50" },
-    { label: "Months Average Progress Journey", value: "12+", color: "from-violet-100 to-purple-50" },
+    { label: "Months Average Progress Journey", value: "12+", color: "from-blue-100 to-blue-50" },
   ];
 
 
   return (
     <main className={`bg-white ${poppins.className}`}>
       {/* HERO SECTION */}
-      <section className="pt-20 pb-10 md:pt-24">
+      <section className="pt-32 pb-10 md:pt-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-[1fr_1.15fr] md:items-center">
             {/* LEFT SIDE */}
@@ -173,17 +173,19 @@ export default function Page() {
                   </span>
                 </Link>
 
-                <Link
-                  href="/success-stories"
-                  className="relative h-10 w-full sm:w-[200px] rounded-full border border-red-600 text-red-600 font-medium flex items-center justify-center overflow-hidden group transition-all duration-500"
+                <a
+                  href="https://www.youtube.com/watch?v=cd_EKSbZ0e4&list=PL0soVNqKLg5Mk3uKidD-TPGw2y4xTDJmb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative h-10 w-full sm:w-[200px] rounded-full border border-red-600 text-red-600 font-medium flex items-center justify-center overflow-hidden group transition-all duration-500 active:scale-95"
                 >
-                  <span className="absolute inset-0 bg-red-600 rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-500 ease-out" />
-                  <span className="relative z-10 flex items-center gap-2 transition-all duration-500">
-                    <span className="text-lg group-hover:hidden">▶</span>
-                    <span className="hidden text-2xl text-white group-hover:block">▶</span>
-                    <span className="group-hover:hidden">Success Stories</span>
+                  <span className="absolute inset-0 bg-red-600 rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 group-active:scale-y-100 transition-transform duration-500 ease-out will-change-transform" />
+                  <span className="relative z-10 flex items-center gap-2 transition-all duration-500 will-change-auto">
+                    <span className="text-lg group-hover:hidden group-active:hidden">▶</span>
+                    <span className="hidden text-2xl text-white group-hover:block group-active:block">▶</span>
+                    <span className="group-hover:hidden group-active:hidden">Success Stories</span>
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -297,7 +299,7 @@ export default function Page() {
 
             {/* Multidisciplinary Support */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                 <span className="text-2xl">🤝</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Multidisciplinary Support Under One Roof</h3>
@@ -321,7 +323,7 @@ export default function Page() {
           </div>
 
           {/* Mission Statement - Full Width */}
-          <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 md:p-8 text-white">
+          <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 md:p-8 text-white">
             <h3 className="text-xl md:text-2xl font-bold mb-3 text-center">Our Mission</h3>
             <p className="text-base md:text-lg leading-relaxed text-center max-w-4xl mx-auto">
               To help every child unlock their full potential through Root Cause Therapy and evidence-based pediatric rehab—so families experience clarity, confidence, and visible progress.
@@ -363,7 +365,7 @@ export default function Page() {
             </div>
 
             <div className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50" />
               <div className="relative p-8 space-y-4">
                 <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 text-blue-700 px-3 py-1 text-sm font-semibold">
                   Dr Aaditya’s Root Cause Therapy
@@ -454,7 +456,7 @@ export default function Page() {
             </p>
             <Link
               href="/book"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white font-semibold shadow-lg transition-transform duration-300 hover:scale-[1.02] focus-visible:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-300"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 text-white font-semibold shadow-lg transition-transform duration-300 hover:scale-[1.02] focus-visible:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
             >
               Start Your Child&apos;s Journey
             </Link>

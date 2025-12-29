@@ -196,7 +196,7 @@ export default function Navbar() {
             { label: "Conditions Treated", href: "/conditions" },
             { label: "How It Works", href: "/#timeline" },
             { label: "Success Stories", href: "/#testimonials" },
-            { label: "Contact", href: "/contact" },
+            { label: "Contact", href: "/contactus" },
           ].map((item) => (
             <Link
               key={item.href}

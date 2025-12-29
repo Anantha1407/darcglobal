@@ -105,12 +105,13 @@ export default function TestimonialsCarousel() {
 
             <div
               ref={carouselRef}
-              className="flex gap-4 overflow-x-auto pb-4 md:pb-6 snap-x snap-mandatory scroll-smooth no-scrollbar"
+              className="flex gap-4 overflow-x-auto pb-4 md:pb-6 snap-x snap-mandatory no-scrollbar"
+              style={{ scrollBehavior: "smooth" }}
             >
               {testimonials.map((item) => (
                 <div
                   key={item.id}
-                  className="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col h-[560px] md:h-[600px]"
+                  className="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col h-[560px] md:h-[600px] will-change-transform"
                   data-testimonial-id={item.id}
                 >
                   {prefetchedIds.has(item.id) && (
@@ -132,7 +133,7 @@ export default function TestimonialsCarousel() {
                       src={`https://i.ytimg.com/vi/${item.id}/hq720.jpg`}
                       srcSet={`https://i.ytimg.com/vi/${item.id}/hq720.jpg 1x, https://i.ytimg.com/vi/${item.id}/maxresdefault.jpg 2x`}
                       alt={item.title}
-                      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:transform-none"
+                      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 md:group-hover:scale-105 motion-reduce:transition-none motion-reduce:transform-none"
                       loading="lazy"
                       decoding="async"
                       onError={(e) => {
@@ -146,7 +147,7 @@ export default function TestimonialsCarousel() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="h-16 w-16 rounded-full bg-white/90 text-blue-600 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                      <div className="h-16 w-16 rounded-full bg-white/90 text-blue-600 flex items-center justify-center shadow-lg transition-transform duration-300 md:group-hover:scale-110">
                         ▶
                       </div>
                     </div>
@@ -172,7 +173,7 @@ export default function TestimonialsCarousel() {
                         href={`https://www.youtube.com/watch?v=${item.id}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-red-500 via-pink-500 to-indigo-600 text-white font-semibold py-3 shadow-md transition-transform duration-300 hover:scale-[1.02] motion-reduce:transition-none motion-reduce:transform-none"
+                        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 text-white font-semibold py-3 shadow-md transition-transform duration-300 md:hover:scale-[1.02] motion-reduce:transition-none motion-reduce:transform-none"
                       >
                         Watch Stories
                       </a>

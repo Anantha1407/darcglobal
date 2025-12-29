@@ -112,7 +112,7 @@ export default function TherapyTimeline() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-blue-50/50 backdrop-blur-sm">
             <span className="text-sm font-semibold text-blue-700">Your Child's Journey</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-600 to-blue-700 bg-clip-text text-transparent">
             Therapy Timeline & Transformation
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
@@ -122,7 +122,7 @@ export default function TherapyTimeline() {
 
         <div className="relative">
           {/* Animated background gradient */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 blur-3xl opacity-40 -z-10" />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-50 via-blue-50 to-blue-50 blur-3xl opacity-40 -z-10" />
           
           <div className="relative overflow-hidden rounded-3xl bg-white/70 backdrop-blur-md shadow-2xl border border-white/50 px-2 md:px-6 py-10">
             {/* Animated timeline line */}
@@ -158,7 +158,7 @@ export default function TherapyTimeline() {
                     <div
                       className={`absolute right-6 top-1/2 h-1.5 -translate-y-1/2 rounded-full transition-all duration-1000 ease-out ${
                         isVisible 
-                          ? 'w-24 bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50' 
+                          ? 'w-24 bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg shadow-blue-500/50' 
                           : 'w-8 bg-gray-300'
                       }`}
                     />
@@ -174,7 +174,7 @@ export default function TherapyTimeline() {
                       
                       {/* Glow effect on hover */}
                       {isVisible && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-blue-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       )}
                       
                       {/* Left side - Visual badge */}
@@ -183,10 +183,10 @@ export default function TherapyTimeline() {
                           isVisible ? 'scale-100' : 'scale-75 opacity-60'
                         }`}>
                           {/* Background layers */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-purple-100" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-blue-100" />
                           <div className="absolute inset-0 bg-gradient-to-t from-blue-50/50 to-transparent" />
                           <div className="absolute inset-1 rounded-full border border-blue-200/40" />
-                          <div className="absolute inset-3 rounded-full border border-purple-200/30" />
+                          <div className="absolute inset-3 rounded-full border border-blue-200/30" />
                           
                           {/* Ghost number background */}
                           <div
@@ -199,7 +199,7 @@ export default function TherapyTimeline() {
                           
                           {/* Badge circle */}
                           <div
-                            className={`absolute inset-0 flex items-center justify-center text-sm font-bold text-white bg-gradient-to-br from-blue-600 to-purple-600 rounded-full shadow-xl transition-all duration-700 ${
+                            className={`absolute inset-0 flex items-center justify-center text-sm font-bold text-white bg-gradient-to-br from-blue-600 to-blue-700 rounded-full shadow-xl transition-all duration-700 ${
                               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
                             }`}
                           >
@@ -218,12 +218,12 @@ export default function TherapyTimeline() {
                         <div className="flex items-center gap-2 mb-4">
                           <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold transition-all duration-500 ${
                             isVisible
-                              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+                              ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30'
                               : 'bg-gray-100 text-gray-600'
                           }`}>
                             {step.title}
                           </div>
-                          <div className={`h-1.5 w-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500 ${
+                          <div className={`h-1.5 w-6 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-500 ${
                             isVisible ? 'opacity-100' : 'opacity-0'
                           }`} />
                         </div>
@@ -272,7 +272,7 @@ export default function TherapyTimeline() {
                   <span
                     className={`h-2 rounded-full transition-all duration-500 ${
                       visible.has(i) 
-                        ? 'w-8 bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/50' 
+                        ? 'w-8 bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg shadow-blue-500/50' 
                         : 'w-2 bg-gray-300'
                     }`}
                   />
@@ -283,7 +283,7 @@ export default function TherapyTimeline() {
         </div>
 
         {/* Stats section */}
-        <div className="grid gap-4 sm:grid-cols-3 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 rounded-2xl p-8 shadow-xl border border-blue-400/30">
+        <div className="grid gap-4 sm:grid-cols-3 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 rounded-2xl p-8 shadow-xl border border-blue-400/30">
           <div className="flex flex-col items-center text-center space-y-2 group cursor-pointer">
             <div className="text-4xl md:text-5xl font-black text-white group-hover:scale-110 transition-transform duration-300">
               3–6
@@ -316,7 +316,7 @@ export default function TherapyTimeline() {
           </div>
           <a
             href="/book"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group"
           >
             <span>Book Your Consultation</span>
             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
