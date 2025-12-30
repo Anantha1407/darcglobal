@@ -1,8 +1,6 @@
-"use client";
-
 import ScrollReveal from "../components/ScrollReveal";
 import { Poppins } from "next/font/google";
-import { useState } from "react";
+import ContactForm from "./ContactForm";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -10,68 +8,6 @@ export const poppins = Poppins({
 });
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    age: "",
-    location: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Thank you! We'll get back to you within 24 hours.",
-        });
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          age: "",
-          location: "",
-          message: "",
-        });
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Something went wrong. Please try calling us instead.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
   return (
     <main className={`pt-20 overflow-x-hidden ${poppins.className}`}>
       {/* HERO SECTION */}
@@ -175,7 +111,7 @@ export default function ContactUs() {
               </div>
 
               {/* Online Option */}
-              <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-md">
+              <div className="rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white p-6 shadow-md">
                 <div className="space-y-3">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm font-semibold">
                     💻 Teletherapy Available
@@ -196,137 +132,7 @@ export default function ContactUs() {
                   <p className="text-gray-600">Fill out the form and we'll get back to you within 24 hours.</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Success/Error Messages */}
-                  {submitStatus.type && (
-                    <div
-                      className={`p-4 rounded-lg ${
-                        submitStatus.type === "success"
-                          ? "bg-green-50 text-green-800 border border-green-200"
-                          : "bg-red-50 text-red-800 border border-red-200"
-                      }`}
-                    >
-                      {submitStatus.message}
-                    </div>
-                  )}
-
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none"
-                      placeholder="+91 XXXXX XXXXX"
-                    />
-                  </div>
-
-                  {/* Child's Age */}
-                  <div>
-                    <label htmlFor="age" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Child's Age (optional)
-                    </label>
-                    <input
-                      type="text"
-                      id="age"
-                      name="age"
-                      value={formData.age}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none"
-                      placeholder="e.g., 4 years"
-                    />
-                  </div>
-
-                  {/* Preferred Location */}
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Preferred Location *
-                    </label>
-                    <select
-                      id="location"
-                      name="location"
-                      required
-                      value={formData.location}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none"
-                    >
-                      <option value="">Select a location</option>
-                      <option value="ashok-nagar">Ashok Nagar</option>
-                      <option value="pallikaranai">Pallikaranai</option>
-                      <option value="online">Online/Teletherapy</option>
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition outline-none resize-none"
-                      placeholder="Tell us about your child's needs, concerns, or questions..."
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message →"}
-                  </button>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    By submitting this form, you agree to our Privacy Policy and Terms of Service.
-                  </p>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -335,7 +141,7 @@ export default function ContactUs() {
 
       {/* CTA SECTION */}
       <ScrollReveal>
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
+        <section className="py-16 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white text-center">
           <div className="max-w-3xl mx-auto px-4 md:px-6 space-y-5">
             <h3 className="text-3xl font-bold">Ready to Take the First Step?</h3>
             <p className="text-white/90">

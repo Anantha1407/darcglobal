@@ -5,7 +5,7 @@ export default function AboutUs() {
         <main className="pt-20 overflow-x-hidden">
             {/* HERO */}
             <ScrollReveal>
-                <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white">
+                <section className="py-16 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white">
                     <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 md:grid-cols-[1.2fr_1fr] items-center">
                         <div className="space-y-4">
                             <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-sm font-semibold">
@@ -114,7 +114,7 @@ export default function AboutUs() {
 
             {/* CTA */}
             <ScrollReveal>
-                <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
+                <section className="py-16 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white text-center">
                     <div className="max-w-3xl mx-auto px-4 md:px-6 space-y-5">
                         <h3 className="text-3xl font-bold">Ready to talk?</h3>
                         <p className="text-white/90">Book an assessment or speak with our team to learn how we can help your child progress.</p>
@@ -132,7 +132,7 @@ export default function AboutUs() {
 function PersonCard({ role, name, bio }: { role: string; name: string; bio: string }) {
     return (
         <div className="group relative overflow-hidden rounded-2xl border bg-white shadow-md hover:shadow-xl transition">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="p-6 md:p-8 grid gap-6 md:grid-cols-[0.85fr_1.15fr] items-center relative">
                 <div className="h-40 md:h-48 w-full rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 shadow-inner" />
                 <div className="space-y-2">

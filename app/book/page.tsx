@@ -101,12 +101,12 @@ export default function BookAssessmentPage() {
   };
 
   return (
-    <main className={`min-h-screen bg-slate-50 ${poppins.className}`}>
+    <main className={`min-h-screen bg-white ${poppins.className}`}>
       <div className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-5xl">
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-white p-6 md:p-8">
+            <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white p-6 md:p-8">
               <div className="flex items-center justify-between gap-4">
                 <div className="space-y-1">
                   <p className="text-sm font-semibold uppercase tracking-wide">Book Assessment</p>
@@ -125,12 +125,12 @@ export default function BookAssessmentPage() {
               <div className="mt-6 flex items-center gap-3">
                 {[1, 2, 3].map((s) => (
                   <div key={s} className="flex items-center gap-2">
-                    <div
+                      <div
                       className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-semibold transition ${
                         step === s
-                          ? "border-white bg-white text-purple-600"
+                          ? "border-white bg-white text-blue-700"
                           : step > s
-                          ? "border-white/70 bg-white/80 text-purple-700"
+                          ? "border-white/70 bg-white/80 text-blue-700"
                           : "border-white/40 text-white/70"
                       }`}
                     >
@@ -316,7 +316,7 @@ export default function BookAssessmentPage() {
                       type="button"
                       onClick={() => setStep((s) => Math.min(3, s + 1))}
                       disabled={!canProceed()}
-                      className="h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 px-8 text-sm font-semibold text-white shadow-md transition hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="h-12 rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-8 text-sm font-semibold text-white shadow-md transition hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       Continue →
                     </button>
@@ -326,7 +326,7 @@ export default function BookAssessmentPage() {
                       type="button"
                       onClick={handleSubmit}
                       disabled={!canProceed() || isSubmitting}
-                      className="h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 px-8 text-sm font-semibold text-white shadow-md transition hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="h-12 rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-8 text-sm font-semibold text-white shadow-md transition hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
