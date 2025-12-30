@@ -131,9 +131,9 @@ export default function Navbar() {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/aboutus">About Us</NavLink>
             <ServicesDropdown />
-            <NavLink href="/conditions">Conditions Treated</NavLink>
             <NavLink href="/#timeline">How It Works</NavLink>
             <NavLink href="/#testimonials">Success Stories</NavLink>
+            <NavLink href="/faq">FAQ</NavLink>
             <NavLink href="/contactus">Contact Us</NavLink>
           </div>
 
@@ -193,9 +193,9 @@ export default function Navbar() {
             { label: "Home", href: "/" },
             { label: "About Us", href: "/aboutus" },
             { label: "Services", href: "/services" },
-            { label: "Conditions Treated", href: "/conditions" },
             { label: "How It Works", href: "/#timeline" },
             { label: "Success Stories", href: "/#testimonials" },
+            { label: "FAQ", href: "/faq" },
             { label: "Contact", href: "/contactus" },
           ].map((item) => (
             <Link
