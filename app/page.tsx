@@ -79,7 +79,7 @@ export default function Page() {
 
               {/* Heading */}
               <h1 className="text-3xl md:text-5xl font-bold leading-tight text-gray-900">
-                Transform Your Child&apos;s
+                Empower Your Child&apos;s
                 <br />
                 <span className="text-blue-600">Development Journey</span>
               </h1>
